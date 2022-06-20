@@ -29,10 +29,9 @@ modelDefiners.forEach(model => model(sequelize));
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
 
-const { Table, Secret, Order, Chef, Menu, Category } = sequelize.models;
+const { Table, Secret, Order, Chef, Product, Category } = sequelize.models;
 
-// Aca vendrian las relaciones
-// Product.hasMany(Reviews);
+// Relaciones
 
 Table.belongsTo(Secret);
 Secret.hasOne(Table);
@@ -43,26 +42,26 @@ Order.belongsTo(Table);
 Chef.hasMany(Order);
 Order.belongsTo(Chef);
 
-Order.belongsToMany(Menu, {
-	through: "Order_Menu",
+Order.belongsToMany(Product, {
+	through: "Order_Product",
 	timestamps: false
 });
-Menu.belongsToMany(Order, {
-	through: "Order_Menu",
+Product.belongsToMany(Order, {
+	through: "Order_Product",
 	timestamps: false
 });
 
-Category.belongsToMany(Menu, {
-	through: "Menu_Category",
+Category.belongsToMany(Product, {
+	through: "Product_Category",
 	timestamps: false
 });
-Menu.belongsToMany(Category, {
-	through: "Menu_Category",
+Product.belongsToMany(Category, {
+	through: "Product_Category",
 	timestamps: false
 });
 
 module.exports = {
 	Op,
-	...sequelize.models, // para poder importar los modelos así: const { Product } = require('./db.js');
-	conn: sequelize // para importart la conexión { conn } = require('./db.js');
+	...sequelize.models,
+	conn: sequelize
 };
