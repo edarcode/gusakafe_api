@@ -9,7 +9,7 @@ const createCategory = async (req, res, next) => {
 		});
 		if (!created)
 			return res.status(409).json({ msg: "already exists", category });
-		res.status(200).json({ msg: "created successfully", category });
+		res.status(201).json({ msg: "created successfully", category });
 	} catch (error) {
 		next(error);
 	}
