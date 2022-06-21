@@ -24,6 +24,10 @@ module.exports = sequelize => {
 				validate: {
 					isUrl: true
 				}
+			},
+			state: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: true
 			}
 		},
 		{ timestamps: false }

@@ -51,11 +51,13 @@ Product.belongsToMany(Order, {
 	timestamps: false
 });
 
-Category.belongsToMany(Product, {
+Product.belongsToMany(Category, {
 	through: "Product_Category",
+	as: "categories",
 	timestamps: false
 });
-Product.belongsToMany(Category, {
+
+Category.belongsToMany(Product, {
 	through: "Product_Category",
 	timestamps: false
 });
