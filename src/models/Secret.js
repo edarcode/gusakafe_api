@@ -6,7 +6,7 @@ module.exports = sequelize => {
 	sequelize.define(
 		"Secret",
 		{
-			name: {
+			code: {
 				type: DataTypes.STRING,
 				allowNull: false,
 				unique: true
