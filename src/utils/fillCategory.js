@@ -1,19 +1,17 @@
 const { categories } = require("../data/categories.json");
 const { axios } = require("./axios");
 
-const promiseDefinition = item => {
-	return axios({
-		method: "POST",
-		url: "/categories",
-		data: item
-	});
-};
-
 const fillCategory = async () => {
-	const promiseDefinitions = categories.map(item => promiseDefinition(item));
 	try {
-		const data = await Promise.all(promiseDefinitions);
-		if (data.length) console.log("categories full");
+		for (let i = 0; i < categories.length; i++) {
+			const element = categories[i];
+			await axios({
+				method: "POST",
+				url: "/categories",
+				data: element
+			});
+		}
+		console.log("*********************** categories full *******************");
 	} catch (error) {
 		console.log(error);
 	}
