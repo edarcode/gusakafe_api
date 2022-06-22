@@ -4,13 +4,13 @@ const { include } = require("../utils/include");
 const { productsPerPage } = require("../../../constants/perPage");
 
 const getAllProducts = async (req, res, next) => {
-	const { page = 0, name, min, max, idCategory } = req.query;
+	const { page = 0, name, min, max, idCategory, state } = req.query;
 	try {
 		const { count, rows } = await Product.findAndCountAll({
-			where: where({ name, min, max, Op }),
+			where: where({ name, min, max, state, Op }),
 			offset: productsPerPage * page,
 			limit: productsPerPage,
-			attributes: ["id", "name", "price", "img"],
+			attributes: ["id", "name", "price", "img", "state"],
 			include: include({ idCategory }),
 			distinct: true
 		});
