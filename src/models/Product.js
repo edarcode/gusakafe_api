@@ -6,6 +6,10 @@ module.exports = sequelize => {
 	sequelize.define(
 		"Product",
 		{
+			state: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: true
+			},
 			name: {
 				type: DataTypes.STRING,
 				allowNull: false,
@@ -24,10 +28,6 @@ module.exports = sequelize => {
 				validate: {
 					isUrl: true
 				}
-			},
-			state: {
-				type: DataTypes.BOOLEAN,
-				defaultValue: true
 			}
 		},
 		{ timestamps: false }

@@ -1,11 +1,12 @@
 const { chefsPerPage } = require("../../../constants/perPage");
 const { Chef, Op } = require("../../../db");
+const { where } = require("../utils/where");
 
 const getAllChefs = async (req, res, next) => {
 	const { page = 0, name } = req.query;
 	try {
 		const { count, rows } = await Chef.findAndCountAll({
-			where: (name && { name: { [Op.iLike]: `%${name}%` } }) || {},
+			where: where({ name, Op }),
 			offset: chefsPerPage * page,
 			limit: chefsPerPage,
 			attributes: ["id", "name", "username", "email", "tell", "img"]

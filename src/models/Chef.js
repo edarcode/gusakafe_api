@@ -6,6 +6,10 @@ module.exports = sequelize => {
 	sequelize.define(
 		"Chef",
 		{
+			state: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: true
+			},
 			username: {
 				type: DataTypes.STRING,
 				allowNull: false,
