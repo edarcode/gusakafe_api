@@ -6,14 +6,6 @@ module.exports = sequelize => {
 	sequelize.define(
 		"Order",
 		{
-			name: {
-				type: DataTypes.STRING,
-				allowNull: false,
-				unique: true
-			},
-			tell: {
-				type: DataTypes.BIGINT
-			},
 			state: {
 				type: DataTypes.ENUM("done", "pending"),
 				defaultValue: "pending"
