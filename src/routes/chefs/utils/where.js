@@ -1,14 +1,8 @@
 module.exports = {
-	where: ({ name, state, Op }) => {
-		if (name) {
-			return {
-				name: { [Op.iLike]: `%${name}%` },
-				state: (state && state) || true
-			};
-		} else {
-			return {
-				state: (state && state) || true
-			};
-		}
+	where: ({ name, Op, state }) => {
+		const result = {};
+		if (name) result.name = { [Op.iLike]: `%${name}%` };
+		if (state) result.state = state;
+		return result;
 	}
 };
