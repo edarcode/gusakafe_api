@@ -6,6 +6,10 @@ module.exports = sequelize => {
 	sequelize.define(
 		"Table",
 		{
+			state: {
+				type: DataTypes.ENUM("busy", "available"),
+				defaultValue: "available"
+			},
 			name: {
 				type: DataTypes.STRING,
 				allowNull: false,
