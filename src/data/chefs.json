@@ -1,0 +1,29 @@
+{
+	"chefs": [
+		{
+			"username": "edarcode",
+			"name": "edwin ortiz",
+			"email": "edarcode@gmail.com",
+			"tell": 3028375858,
+			"img": "https://drive.google.com/file/d/1PowLpz2W33UXqlxx9tcYECudh6peMz6c/view?usp=sharing"
+		},
+		{
+			"username": "lyff",
+			"name": "catalina romero castallanos",
+			"email": "catalina@gmail.com",
+			"tell": 3017201111
+		},
+		{
+			"username": "antonela",
+			"name": "antonela bedoya enamorado",
+			"email": "antonela@gmail.com",
+			"tell": 3005005555
+		},
+		{
+			"username": "lucifer",
+			"name": "fernando castro",
+			"email": "fer@gmail.com",
+			"tell": 3172160021
+		}
+	]
+}

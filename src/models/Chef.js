@@ -6,12 +6,12 @@ module.exports = sequelize => {
 	sequelize.define(
 		"Chef",
 		{
-			name: {
+			username: {
 				type: DataTypes.STRING,
 				allowNull: false,
 				unique: true
 			},
-			username: {
+			name: {
 				type: DataTypes.STRING,
 				allowNull: false,
 				unique: true
@@ -28,7 +28,6 @@ module.exports = sequelize => {
 			},
 			img: {
 				type: DataTypes.STRING,
-				allowNull: false,
 				validate: {
 					isUrl: true
 				}

@@ -23,6 +23,7 @@ const { conn } = require("./src/db.js");
 const fillCategory = require("./src/utils/fillCategory.js");
 const fillProduct = require("./src/utils/fillProduct.js");
 const fillSecret = require("./src/utils/fillSecret.js");
+const fillChef = require("./src/utils/fillChef.js");
 const PORT = process.env.PORT;
 
 // Syncing all the models at once.
@@ -31,6 +32,7 @@ conn.sync({ force: true }).then(() => {
 		await fillCategory();
 		await fillProduct();
 		await fillSecret();
+		await fillChef();
 		console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
 	});
 });
