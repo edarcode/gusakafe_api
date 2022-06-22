@@ -3,11 +3,11 @@ module.exports = {
 		if (name) {
 			return {
 				name: { [Op.iLike]: `%${name}%` },
-				state: (state && { state }) || true
+				state: (state && state) || true
 			};
 		} else {
 			return {
-				state: (state && { state }) || true
+				state: (state && state) || true
 			};
 		}
 	}
