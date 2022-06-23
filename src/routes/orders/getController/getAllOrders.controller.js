@@ -1,6 +1,8 @@
-const { Order, Product } = require("../../../db");
+const { Order, Chef, Table, Product } = require("../../../db");
 const { where } = require("../utils/where");
 const { ordersPerPage } = require("../../../constants/perPage");
+const { formatRows } = require("../utils/formatRows");
+const { include } = require("../utils/include");
 
 const getAllOrders = async (req, res, next) => {
 	const { page = 0, state } = req.query;
@@ -10,12 +12,7 @@ const getAllOrders = async (req, res, next) => {
 			offset: ordersPerPage * page,
 			limit: ordersPerPage,
 			attributes: ["id", "duration", "state", "total"],
-			include: [
-				{
-					model: Product,
-					through: { attributes: [] }
-				}
-			],
+			include: include({ Chef, Table, Product }),
 			distinct: true
 		});
 		if (!rows.length) return res.status(404).json({ msg: "not found" });
@@ -24,7 +21,7 @@ const getAllOrders = async (req, res, next) => {
 			ordersPerPage,
 			pageCount: Math.ceil(count / ordersPerPage),
 			ordersCount: count,
-			orders: rows
+			orders: formatRows(rows)
 		};
 		res.status(200).json(data);
 	} catch (error) {
