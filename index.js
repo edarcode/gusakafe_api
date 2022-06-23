@@ -25,10 +25,27 @@ const fillProduct = require("./src/utils/fillProduct.js");
 const fillChef = require("./src/utils/fillChef.js");
 const fillTable = require("./src/utils/fillTable.js");
 const PORT = process.env.PORT;
+const { Server } = require("socket.io");
+const http = require("http");
+
+const httpServer = http.createServer(server);
+
+const io = new Server(httpServer, {
+	cors: {
+		origin: "http://localhost:3000"
+	}
+});
+
+io.on("connection", socket => {
+	console.log(`User conect con id: ${socket.id}`);
+	socket.on("greet", data => {
+		socket.broadcast.emit("greet", data);
+	});
+});
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-	server.listen(PORT, async () => {
+	httpServer.listen(PORT, async () => {
 		await fillCategory();
 		await fillProduct();
 		await fillChef();
