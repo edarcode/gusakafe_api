@@ -27,6 +27,7 @@ const fillTable = require("./src/utils/fillTable.js");
 const PORT = process.env.PORT;
 const { Server } = require("socket.io");
 const http = require("http");
+const fillOrder = require("./src/utils/fillOrder.js");
 
 const httpServer = http.createServer(server);
 
@@ -50,6 +51,7 @@ conn.sync({ force: true }).then(() => {
 		await fillProduct();
 		await fillChef();
 		await fillTable();
+		await fillOrder();
 		console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
 	});
 });

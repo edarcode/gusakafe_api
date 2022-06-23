@@ -1,0 +1,43 @@
+{
+	"orders": [
+		{
+			"idTable": 1,
+			"products": [
+				{
+					"id": 1,
+					"amount": 2
+				},
+				{
+					"id": 2,
+					"amount": 3
+				}
+			]
+		},
+		{
+			"idTable": 2,
+			"products": [
+				{
+					"id": 3,
+					"amount": 2
+				},
+				{
+					"id": 4,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"idTable": 3,
+			"products": [
+				{
+					"id": 5,
+					"amount": 2
+				},
+				{
+					"id": 8,
+					"amount": 2
+				}
+			]
+		}
+	]
+}
