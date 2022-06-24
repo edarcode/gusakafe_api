@@ -6,9 +6,9 @@ module.exports = {
 			});
 			return {
 				id,
+				duration,
 				chef: (chef && chef.name) || chef,
 				table: (table && table.name) || table,
-				duration,
 				state,
 				total,
 				products: formatProducts
