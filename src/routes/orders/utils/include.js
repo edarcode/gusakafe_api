@@ -3,12 +3,10 @@ module.exports = {
 		return [
 			{
 				model: Chef,
-				as: "chef",
 				attributes: ["name"]
 			},
 			{
 				model: Table,
-				as: "table",
 				attributes: ["name"]
 			},
 			{

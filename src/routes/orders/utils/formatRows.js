@@ -1,14 +1,14 @@
 module.exports = {
 	formatRows: rows => {
-		return rows.map(({ id, chef, table, duration, state, total, products }) => {
+		return rows.map(({ id, Chef, Table, duration, state, total, products }) => {
 			const formatProducts = products.map(({ name, Detail }) => {
 				return { name, amount: Detail.amount, price: Detail.price };
 			});
 			return {
 				id,
 				duration,
-				chef: (chef && chef.name) || chef,
-				table: (table && table.name) || table,
+				chef: (Chef && Chef.name) || Chef,
+				table: (Table && Table.name) || Table,
 				state,
 				total,
 				products: formatProducts

@@ -34,10 +34,10 @@ const { Table, Order, Chef, Product, Category, Detail } = sequelize.models;
 // Relaciones
 
 Table.hasMany(Order);
-Order.belongsTo(Table, { as: "table" });
+Order.belongsTo(Table);
 
 Chef.hasMany(Order);
-Order.belongsTo(Chef, { as: "chef" });
+Order.belongsTo(Chef);
 
 Order.belongsToMany(Product, {
 	through: Detail,
