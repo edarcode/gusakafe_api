@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const auth = require("./auth/auth.router");
 const categories = require("./categories/categories.router");
 const chefs = require("./chefs/chefs.router");
 const orders = require("./orders/orders.router");
@@ -12,5 +13,6 @@ router.use("/categories", categories);
 router.use("/products", products);
 router.use("/chefs", chefs);
 router.use("/orders", orders);
+router.use("/auth", auth);
 
 module.exports = router;

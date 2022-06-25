@@ -28,6 +28,7 @@ const PORT = process.env.PORT;
 const { Server } = require("socket.io");
 const http = require("http");
 const fillOrder = require("./src/utils/fillOrder.js");
+const createSuper = require("./src/utils/createSuper.js");
 
 const httpServer = http.createServer(server);
 
@@ -47,6 +48,7 @@ io.on("connection", socket => {
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
 	httpServer.listen(PORT, async () => {
+		await createSuper();
 		await fillCategory();
 		await fillProduct();
 		await fillChef();

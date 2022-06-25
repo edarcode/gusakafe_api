@@ -3,7 +3,7 @@ const { comparePassword } = require("../../../utils/comparePassword");
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
 
-const authChef = async (req, res, next) => {
+const createAuth = async (req, res, next) => {
 	try {
 		const { password, username } = req.body;
 		const chef = await Chef.findOne({ where: { username } });
@@ -17,4 +17,4 @@ const authChef = async (req, res, next) => {
 	}
 };
 
-module.exports = authChef;
+module.exports = createAuth;
