@@ -29,7 +29,8 @@ const { Server } = require("socket.io");
 const http = require("http");
 const fillOrder = require("./src/utils/fillOrder.js");
 const createSuper = require("./src/utils/createSuper.js");
-const { axios } = require("./src/utils/axios.js");
+const { busyTable } = require("./src/utils/busyTable.js");
+const { getAllTables } = require("./src/utils/getAllTables.js");
 
 const httpServer = http.createServer(server);
 
@@ -40,16 +41,13 @@ const io = new Server(httpServer, {
 });
 
 io.on("connection", socket => {
-	console.log(`User conect con id: ${socket.id}`);
-	socket.on("occupyTable", async data => {
-		/* const updateTable = await axios({ url: "/tables", data, method: "PATCH" });
-		console.log(typeof updateTable.status);
-		if (updateTable.status === 200) {
-			const data = await axios({ url: "/tables", method: "GET" });
-			data && socket.broadcast.emit("occupyTable", data);
-		} */
-		const updateTable = await axios({ url: "/tables", data, method: "PATCH" });
-		socket.emit("occupyTable", updateTable);
+	socket.on("occupyingTable", async data => {
+		const isBusy = await busyTable(data);
+		const tables = await getAllTables({});
+		if (isBusy) {
+			socket.emit("busyTable", tables);
+			socket.broadcast.emit("busyTable", tables);
+		}
 	});
 });
 

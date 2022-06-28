@@ -1,5 +1,5 @@
 module.exports = {
-	where: ({ name, state, Op }) => {
+	whereGetAllTable: ({ name, state, Op }) => {
 		const result = {};
 		if (name) result.name = { [Op.iLike]: `%${name}%` };
 		if (state) result.state = state;
