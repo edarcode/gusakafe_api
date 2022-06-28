@@ -40,8 +40,8 @@ const io = new Server(httpServer, {
 
 io.on("connection", socket => {
 	console.log(`User conect con id: ${socket.id}`);
-	socket.on("occupyTable", () => {
-		socket.broadcast.emit("occupyTable");
+	socket.on("occupyTable", data => {
+		socket.broadcast.emit("occupyTable", data);
 	});
 });
 
