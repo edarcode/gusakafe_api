@@ -1,17 +1,15 @@
 const { tables } = require("../data/tables.json");
-
-const fillDb = require("./fillDb");
+const { createTable } = require("./createTable");
 
 const fillTable = async () => {
 	try {
-		await fillDb({
-			data: tables,
-			url: "/tables",
-			modelName: "Table"
-		});
+		for (let i = 0; i < tables.length; i++) {
+			const element = tables[i];
+			await createTable(element);
+		}
 	} catch (error) {
 		console.log(error);
 	}
 };
 
-module.exports = fillTable;
+module.exports = { fillTable };

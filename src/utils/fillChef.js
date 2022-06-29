@@ -1,19 +1,15 @@
 const { chefs } = require("../data/chefs.json");
-const authSuper = require("./authSuper");
-const fillDb = require("./fillDb");
+const { createChef } = require("./createChef");
 
 const fillChef = async () => {
 	try {
-		const token = await authSuper();
-		await fillDb({
-			data: chefs,
-			url: "/chefs",
-			modelName: "Chef",
-			token
-		});
+		for (let i = 0; i < chefs.length; i++) {
+			const element = chefs[i];
+			await createChef(element);
+		}
 	} catch (error) {
 		console.log(error);
 	}
 };
 
-module.exports = fillChef;
+module.exports = { fillChef };

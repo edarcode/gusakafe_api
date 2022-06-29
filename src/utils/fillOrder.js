@@ -1,12 +1,15 @@
 const { orders } = require("../data/orders.json");
-const fillDb = require("./fillDb");
+const { createOrder } = require("./createOrder");
 
 const fillOrder = async () => {
 	try {
-		await fillDb({ data: orders, url: "/orders", modelName: "Order" });
+		for (let i = 0; i < orders.length; i++) {
+			const element = orders[i];
+			await createOrder(element);
+		}
 	} catch (error) {
 		console.log(error);
 	}
 };
 
-module.exports = fillOrder;
+module.exports = { fillOrder };

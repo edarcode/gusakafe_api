@@ -1,14 +1,10 @@
-const { Category } = require("../../../db");
+const { createCategory } = require("../../../utils/createCategory");
 
-const createCategory = async (req, res, next) => {
+const createCategoryController = async (req, res, next) => {
 	try {
-		const { name, img } = req.body;
-		if (!name) return res.status(400).json({ msg: "required name" });
-		if (!img) return res.status(400).json({ msg: "required img" });
-		const [category, created] = await Category.findOrCreate({
-			where: { name },
-			defaults: { img }
-		});
+		const result = await createCategory(req.body);
+		if (!result) return res.status(400).json({ msg: "required name and id" });
+		const [category, created] = result;
 		if (!created)
 			return res.status(409).json({ msg: "already exists", category });
 		res.status(201).json({ msg: "created successfully", category });
@@ -17,4 +13,4 @@ const createCategory = async (req, res, next) => {
 	}
 };
 
-module.exports = createCategory;
+module.exports = createCategoryController;

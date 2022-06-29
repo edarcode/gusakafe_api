@@ -19,18 +19,18 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 require("dotenv").config();
 const server = require("./src/server.js");
-const { conn } = require("./src/db.js");
-const fillCategory = require("./src/utils/fillCategory.js");
-const fillProduct = require("./src/utils/fillProduct.js");
-const fillChef = require("./src/utils/fillChef.js");
-const fillTable = require("./src/utils/fillTable.js");
 const PORT = process.env.PORT;
 const { Server } = require("socket.io");
 const http = require("http");
-const fillOrder = require("./src/utils/fillOrder.js");
-const createSuper = require("./src/utils/createSuper.js");
+const { conn } = require("./src/db.js");
+const { fillCategory } = require("./src/utils/fillCategory.js");
+const { fillProduct } = require("./src/utils/fillProduct.js");
+const { fillChef } = require("./src/utils/fillChef.js");
+const { fillTable } = require("./src/utils/fillTable.js");
+const { fillOrder } = require("./src/utils/fillOrder.js");
 const { busyTable } = require("./src/utils/busyTable.js");
 const { getAllTables } = require("./src/utils/getAllTables.js");
+const { createSuperChef } = require("./src/utils/createSuperChef.js");
 
 const httpServer = http.createServer(server);
 
@@ -54,7 +54,7 @@ io.on("connection", socket => {
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
 	httpServer.listen(PORT, async () => {
-		await createSuper();
+		await createSuperChef();
 		await fillCategory();
 		await fillProduct();
 		await fillChef();

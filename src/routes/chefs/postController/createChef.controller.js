@@ -1,19 +1,8 @@
-const { Chef } = require("../../../db");
-const { encryptPassword } = require("../../../utils/encryptPassword");
+const { createChef } = require("../../../utils/createChef");
 
-const createChef = async (req, res, next) => {
+const createChefController = async (req, res, next) => {
 	try {
-		const { username, name, email, tell, img, password } = req.body;
-		const [chef, created] = await Chef.findOrCreate({
-			where: { username },
-			defaults: {
-				name,
-				email,
-				tell,
-				img,
-				password: await encryptPassword(password)
-			}
-		});
+		const [chef, created] = await createChef(req.body);
 		if (!created) return res.status(409).json({ msg: "already exists", chef });
 		res.status(201).json({ msg: "created successfully", chef });
 	} catch (error) {
@@ -21,4 +10,4 @@ const createChef = async (req, res, next) => {
 	}
 };
 
-module.exports = createChef;
+module.exports = createChefController;

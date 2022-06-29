@@ -1,17 +1,15 @@
 const { categories } = require("../data/categories.json");
-
-const fillDb = require("./fillDb");
+const { createCategory } = require("./createCategory");
 
 const fillCategory = async () => {
 	try {
-		await fillDb({
-			data: categories,
-			url: "/categories",
-			modelName: "Category"
-		});
+		for (let i = 0; i < categories.length; i++) {
+			const element = categories[i];
+			await createCategory(element);
+		}
 	} catch (error) {
 		console.log(error);
 	}
 };
 
-module.exports = fillCategory;
+module.exports = { fillCategory };

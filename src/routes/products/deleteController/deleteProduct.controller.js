@@ -1,9 +1,8 @@
-const { Product } = require("../../../db");
+const { deleteProduct } = require("../../../utils/deleteProduct");
 
-const deleteProduct = async (req, res, next) => {
+const deleteProductController = async (req, res, next) => {
 	try {
-		const { id } = req.query;
-		const isDestroy = await Product.destroy({ where: { id } });
+		const isDestroy = await deleteProduct(req.query);
 		if (isDestroy) return res.status(200).json({ msg: "destroy successfully" });
 		res.status(404).json({ msg: "not found" });
 	} catch (error) {
@@ -11,4 +10,4 @@ const deleteProduct = async (req, res, next) => {
 	}
 };
 
-module.exports = deleteProduct;
+module.exports = deleteProductController;
