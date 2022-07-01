@@ -43,8 +43,8 @@ const io = new Server(httpServer, {
 io.on("connection", socket => {
 	socket.on("occupyingTable", async data => {
 		const isBusy = await busyTable(data);
-		const tables = await getAllTables({});
 		if (isBusy) {
+			const tables = await getAllTables({});
 			socket.emit("busyTable", tables);
 			socket.broadcast.emit("busyTable", tables);
 		}

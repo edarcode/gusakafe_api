@@ -8,7 +8,8 @@ module.exports = {
 			where: whereGetAllTable({ name, Op, state }),
 			offset: tablesPerPage * page,
 			limit: tablesPerPage,
-			attributes: ["id", "name", "code", "state"]
+			attributes: ["id", "name", "code", "state"],
+			order: ["name"]
 		});
 		if (!rows.length) return null;
 		const data = {
