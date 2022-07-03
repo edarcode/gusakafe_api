@@ -3,121 +3,121 @@
 		{
 			"name": "gaseosa",
 			"price": 2000,
-			"img": "https://drive.google.com/file/d/1uZmrIE4adD5_VXoP7-IaFciWM0U1Q83J/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656818607/gusakafe/coca_vi9lyh.jpg",
 			"categories": [1]
 		},
 		{
 			"name": "jugo de naranja",
 			"price": 4000,
-			"img": "https://drive.google.com/file/d/1sdoB-RqfSzpqtM4-Nq_RMSnTZ_oRPS2t/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656818717/gusakafe/jugo_de_naranja_cdkrif.jpg",
 			"categories": [1]
 		},
 		{
 			"name": "jugo de fresa",
 			"price": 4000,
-			"img": "https://drive.google.com/file/d/1D_eiKbZLsW9rphmqiXi6n7i_WKpTUpUj/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656818743/gusakafe/jugo_de_fresa_fw5emc.jpg",
 			"categories": [1]
 		},
 		{
 			"name": "jugo de mango",
 			"price": 4000,
-			"img": "https://drive.google.com/file/d/1f7W7eMgE_2vZdM92I1KMZmBSsZJypbFW/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656818799/gusakafe/jugo_de_mango_y872jo.jpg",
 			"categories": [1]
 		},
 		{
 			"name": "jugo de coco",
 			"price": 4000,
-			"img": "https://drive.google.com/file/d/18N3v2PFCML2MoRjkIXBV-rkon2AJ31j5/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656818829/gusakafe/jugo_de_coco_ctikeo.jpg",
 			"categories": [1]
 		},
 		{
 			"name": "costillar",
 			"price": 29999,
-			"img": "https://drive.google.com/file/d/1DXqyfT-1kMoOTzJBUZhFE66DJmj3h4qa/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656818860/gusakafe/costillar_xquftm.jpg",
 			"categories": [2]
 		},
 		{
 			"name": "rodajas de carne",
 			"price": 19999,
-			"img": "https://drive.google.com/file/d/1AN8Vi6t87S_oh7u6K7t-giYdMY4DjVH1/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656818893/gusakafe/rodajas_de_carne_mhuabs.jpg",
 			"categories": [2]
 		},
 		{
 			"name": "carne con espagueti",
 			"price": 25300,
-			"img": "https://drive.google.com/file/d/1Uc4cfbY1zc_wcU0XsGtdeynHzDCLcGvI/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656818943/gusakafe/carne_con_espagueti_otjci5.jpg",
 			"categories": [2]
 		},
 		{
 			"name": "robalo",
 			"price": 21500,
-			"img": "https://drive.google.com/file/d/1COaoo4w0eXugHN6dJUUaQWZT0mLMo0Sq/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656818980/gusakafe/robalo_a8d6zl.jpg",
 			"categories": [2]
 		},
 		{
 			"name": "alitas de pollo",
 			"price": 17900,
-			"img": "https://drive.google.com/file/d/1EcsoVf7s3oBAi_aRaFVLNwBeWPEBgSKu/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819002/gusakafe/alitas_de_pollo_g4qajb.jpg",
 			"categories": [2]
 		},
 		{
 			"name": "pollo caramelado",
 			"price": 15900,
-			"img": "https://drive.google.com/file/d/1TvXAdgH0XrhT-EwT5wG-GjHzlCP2SRUQ/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819029/gusakafe/pollo_caramelado_ookr1p.jpg",
 			"categories": [2]
 		},
 		{
 			"name": "tocino mañanero",
 			"price": 12900,
-			"img": "https://drive.google.com/file/d/1eCb7clYLXQ0HRyvP3Nz5s8psYJL67kkL/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819056/gusakafe/tocino_ma%C3%B1anero_jdpwl0.jpg",
 			"categories": [5]
 		},
 		{
 			"name": "helado de fresa",
 			"price": 5000,
-			"img": "https://drive.google.com/file/d/124ilCO4lypGRXWC6X52LBWld9WPTZhUd/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819159/gusakafe/helado_de_fresa_iqvoow.jpg",
 			"categories": [4]
 		},
 		{
 			"name": "caripilla",
 			"price": 5000,
-			"img": "https://drive.google.com/file/d/1e9V191-oiadgCBdnxRshkMIH_pDje4IY/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819180/gusakafe/caripilla_woneec.jpg",
 			"categories": [4]
 		},
 		{
 			"name": "kuricate",
 			"price": 5000,
-			"img": "https://drive.google.com/file/d/1Y3YRplMWufX7UNEntg1VBTLa3GK1DVpX/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819207/gusakafe/kuricate_tcjugz.jpg",
 			"categories": [4]
 		},
 		{
 			"name": "waffles",
 			"price": 8000,
-			"img": "https://drive.google.com/file/d/1PIRGZlxCCMKpcwlOQhhnEgkhMYxbozIB/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819228/gusakafe/waffles_lglhfp.jpg",
 			"categories": [5]
 		},
 		{
 			"name": "fipelines",
 			"price": 8000,
-			"img": "https://drive.google.com/file/d/1yFVevFUMCvVPBafbqmZDAhdI_IBO6lGY/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819250/gusakafe/fipelines_u07ef4.jpg",
 			"categories": [4]
 		},
 		{
 			"name": "flan",
 			"price": 9500,
-			"img": "https://drive.google.com/file/d/1vDwidpLWFP-Pz9alGRXIJSKENU-cER9y/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819269/gusakafe/flan_t6oiui.jpg",
 			"categories": [4]
 		},
 		{
 			"name": "croissant",
 			"price": 8000,
-			"img": "https://drive.google.com/file/d/1UHgBOyk4yZplRd8-OVTV2irjS5taJzjL/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819288/gusakafe/croissant_o0katl.jpg",
 			"categories": [5]
 		},
 		{
 			"name": "pan casero",
 			"price": 3000,
-			"img": "https://drive.google.com/file/d/1kR3NtARlwx5Z1-sWqx4WiMfc9vH8S31t/view?usp=sharing",
+			"img": "https://res.cloudinary.com/dvmsllkkg/image/upload/v1656819311/gusakafe/pan_casero_rghqoh.jpg",
 			"categories": [3]
 		}
 	]
